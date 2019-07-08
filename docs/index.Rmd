@@ -5,8 +5,6 @@ output:
       in_header: pass.html
 ---
 
-#Intro
-
 Welcome to the SHAMP repository. Due to the confidential nature of the modelling data, we require a password:
 <input type="password" onkeyup="onPass(event)" id="pass">
 <span id="status"></span>
