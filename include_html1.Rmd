@@ -1,0 +1,22 @@
+# Include html file 1 {#html1}
+A useful hack, when you want to reference something you've already rendered. 
+
+This may be useful if the rendering time is long.
+
+It's certainly not as nice as if the material were rendered along with the whole book. 
+
+The best way would be to have your external, long script save the information you want to include here - in png/jpg or csv format. 
+
+## See working directory
+```{r, echo=TRUE}
+getwd()
+```
+When you specify your file, the path should be relative to this upper working directory.
+
+## Embedded html
+
+```{r include-html-1, echo=FALSE}
+knitr::include_url("input/html/example_external.html")
+```
+`
+

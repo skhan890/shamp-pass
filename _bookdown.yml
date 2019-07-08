@@ -1,0 +1,17 @@
+book_filename: "SHAMP"
+output_dir: "docs/8fca70b5f3656a43389e37a806b90dd586c629a95ed25e38b0d89ca85a04eb0af1ad3146d0a9008e79a09e0afb42ce42e4d68262eb226a8b79861b6d2f92f54c"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+
+# I like keeping the chapters standalone, e.g. you 
+# can knit them independently. Thus I abandoned having
+# the parameters be a "before chapter script"
+# before_chapter_script: ["input/setup_code/parameters.R"]
+
+# This should work, but it stopped working.
+# Then it started working again, but it confuses the order
+# of rmd_files ?
+# Thus rmd_files are specified with the subdirectory folder prefix
+# rmd_subdir: "code/rmd"

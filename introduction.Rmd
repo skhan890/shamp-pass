@@ -1,0 +1,100 @@
+
+# Introduction
+
+## Abstract
+
+The goal of this project is to examine the feasibility of developing an HIV transmission model for use in local HIV prevention planning for heterosexuals.  Advances in HIV treatment and prevention have changed the intervention policy landscape, and public health departments in the US are now tasked with determining which combination of treatment and prevention strategies will have the greatest impact.  Epidemic modeling is a valuable resource for this type of comprehensive HIV prevention planning.  However, these models are often parameterized with a combination of data from multiple populations.  As a result they are not rooted in, or representative of, a local epidemic, even though treatment and prevention strategies are designed mostly at state and local levels in the U.S.   (Source: Abstract from SHAMP/Dropbox/Awarded/RevisedApplication.pdf))
+
+## Terminology
+
+|    Term     |               Definition               |
+|:-----------:|:--------------------------------------:|
+|     sb      |            (sex-black race)            |
+|     ds      |              (degree-sex)              |
+|     dsb     |         (degree-sex-black race)        |
+|    cohab    |              cohabitating              |
+|    pers     |         persistent relationship        |
+|     ot      |                 onetime                |
+|      H      |                Hispanic                |
+|     HI      |           Hispanic Immigrant           |
+|     BI      |      Non-Hispanic Black immigrant      |
+|     BI      |           Non-Hispanic Black           |
+|      W      |           Non-Hispanic Other           |
+|      W      |           Non-Hispanic White           |
+|    xnet     |              cross-network             |
+|    conc     |               Concurrency              |
+| components  | disconnected parts of a social network |
+|    S/C      |             Spouse or cohab            |
+| dissolution |          relationship dissolving       |
+|    offset   |ERGM term: no relationships of any type |
+|    netdx    | EpiModel term to make ERGM diagnostics |
+|static netdx |      no dissolution included           |
+|dynamic netdx|    allow relationship dissolution      |
+
+## Previous presentations 
+
+Nov 9, 2016 - [Roxanne Kerani, African Immigrants Living with HIV in King County, WA](../../../docs/SHAMP_Presentations/Kerani_SHAMP_2016_1109.pdf)
+
+July 7, 2018 - [Deven Hamilton, Partnerships durations: Do they meet our expectations?](../../../docs/SHAMP_Presentations/NMG_7_17_2018_durations.pdf)
+
+Sep 20, 2018 - [Martina Morris, Syphillis Eradication Summit, California Department of Public Health](../../../docs/SHAMP_Presentations/CPDH%20Bridging%20Networks.pdf)
+
+May 6, 2019 - [PHSKC/SPRC Lunchbox Talk](../../../docs/SHAMP_Presentations/LunchboxFinal.pdf)
+
+
+## Review of local behavioral surveys
+
+
+![from Darcy Rao, https://github.com/statnet/SHAMP/issues/2#issuecomment-264993247](../../../docs/figs/Issue_2_compare.PNG)
+
+![List of SHAMP datasets, https://github.com/statnet/SHAMP/issues/2#issuecomment-264558058](../../../docs/figs/snglick_SHAMP_datasets.PNG)
+
+
+### Public Health Seattle King County (PHSKC) Washington Department of Health (WADOH) Surveillance
+
+Briefly considered merging data about the population into a merged population (pseudopop), but decided not to. See Issue [#46](https://github.com/statnet/SHAMP/issues/46). Additional information about creating pseudopop estimates from PHSKC are detailed in [Issue #37](https://github.com/statnet/SHAMP/issues/37).
+
+See more information from Susan Buskin at [Issue #36](https://github.com/statnet/SHAMP/issues/36). Table shells, and more information about the PHSKC, are in [Issue #23](https://github.com/statnet/SHAMP/issues/23).
+
+For MMP data: we did not use it, but see ]Issue #19](https://github.com/statnet/SHAMP/issues/19) on more information about it.
+
+## National Population based surveys
+
+###  NSFG - National Survey of Family Growth - CDC. *used in final models*
+
+Longitudinal study done in cycles by the CDC to measure trends related to families, fertiliy and health (Source: [CDC](https://www.cdc.gov/nchs/nsfg.htm)).**
+
+**Information to note for future SHAMP-related projects:** The 2006-2010 datasets had data on contacts for sexual data. This needed a request through CSDE to obtain. 2015-2017 did not include those variables. 
+
+- __Age group available:__ 15-45 [Issue #9](https://github.com/statnet/SHAMP/issues/9)
+- __Coital acts:__ Not Available [Issue #10](https://github.com/statnet/SHAMP/issues/10)
+- __Condom use:__ Available [Issue #11](https://github.com/statnet/SHAMP/issues/11)
+
+### NHSLS - National Health and Social Life Survey - ICPSR.  *did not use in final models*
+
+ This was a cross-sectional interview of 3,432 total cases on various social life indicators, such as income, AIDs vulnerability, marital and cohab, fertility, and sexual activity. (Source: [ICPSR, UMich](https://www.icpsr.umich.edu/icpsrweb/HMCA/studies/6647/variables))
+
+- __Age group available:__ 18-59 [Issue #9](https://github.com/statnet/SHAMP/issues/9)
+- __Coital acts:__ Available [Issue #10](https://github.com/statnet/SHAMP/issues/10)
+- __Condom use:__ Available [Issue #11](https://github.com/statnet/SHAMP/issues/11)
+
+###  NHBS - *did not use in final models*
+
+![ ](https://www.cdc.gov/hiv/images/statistics/systems/nhbs/nhbs-logo2.png)
+
+CDC longitudinal survey done in cycles to conduct behavioral surveillance among persons at high risk for HIV infection. (https://www.cdc.gov/hiv/statistics/systems/nhbs/index.html)
+
+- __Age group available:__ 18-50+ 
+- __Coital acts:__  Available 
+- __Condom use:__ Available 
+
+According to [Issue #49](https://github.com/statnet/SHAMP/issues/49): "From NHBS, they report ITI for MSM in 2013 is 7.7 mos and for high-risk heterosexuals is 19.9 mos."
+
+###  Add Health - National Longitudinal Study of Adolescent to Adult Health - *did not use in final models*
+
+The National Longitudinal Study of Adolescent to Adult Health (Add Health) is a longitudinal study of a nationally representative sample of adolescents in grades 7-12 in the United States during the 1994-95 school year. The Add Health cohort has been followed into young adulthood with four in-home interviews, the most recent in 2008, when the sample was aged 24-3. (Source: [DCollab, UW](https://dcollab.uw.edu/data/add-health/))
+
+###  NHANES - National Health and Nutrition Examination Survey *used for weighting parameters*
+
+>The National Health and Nutrition Examination Survey (NHANES) is a program of studies designed to assess the health and nutritional status of adults and children in the United States. (Source: [NHANES, CDC](https://www.google.com/search?client=firefox-b-1-d&q=nhanes))
+
